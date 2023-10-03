@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ./:/src/
+      - ~/.gitconfig:/.gitconfig
+      - ~/.ssh/:/home/user/.ssh/
+    tty: true
+  nginx:
+    image: nginx:1.25.2-alpine3.18
+    volumes:
+      - ./conf/nginx/default.conf:/etc/nginx/templates/default.conf.template
+      - ./conf/nginx/html/unauthorized.html:/opt/nginx/html/unauthorized.html
+    ports:
+      - 8888:8888

@@ -1,0 +1,30 @@
+{
+  "name": "sample-nginx-auth-request-dev",
+  "dockerComposeFile": [
+    "../docker-compose.yaml"
+  ],
+  "service": "dev",
+  "workspaceFolder": "/src",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash"
+          }
+        }
+      },
+      "extensions": [
+        "golang.Go",
+        "yokoe.vscode-postfix-go",
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "christian-kohler.path-intellisense",
+        "streetsidesoftware.code-spell-checker",
+        "redhat.vscode-yaml"
+      ]
+    }
+  },
+  "postAttachCommand": "bash tools/attach-command.sh"
+}
