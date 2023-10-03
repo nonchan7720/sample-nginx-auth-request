@@ -30,7 +30,7 @@ Application server that displays session information.
 ## login information
 
 Login user: `user@example.com`  
-Password: `password` ## Verification with no login
+Password: `password`
 
 ## Verification with no login.
 
