@@ -1,5 +1,7 @@
 # auth_requestを使ったサンプル
 
+[EN](./docs/README-en.md)
+
 ## アプリケーションの起動
 
 `docker-compose up -d`で開発環境とnginxを起動します。
