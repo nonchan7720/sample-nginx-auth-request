@@ -49,3 +49,8 @@ nginx の設定で Locationヘッダーの内容をCookieへ設定し、`unautho
 `unauthorized.html` は Cookieからリダイレクト先を取得し、親のlocation.hrefへリダイレクト先を設定
 
 `/login`へリダイレクトされると成功
+
+ログイン成功後にiframe内で表示されているボタンを押下することで
+
+1回目は成功(セッション削除する)  
+2回目は失敗(セッションエラー)となり、ajaxでのリダイレクトも可能とさせている
