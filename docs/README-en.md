@@ -47,3 +47,8 @@ Set the contents of the `Location` header to a cookie in the nginx configuration
 `unauthorized.html` gets the redirect from the cookie and sets the redirect to the parent location.href
 
 Succeeds if redirected to `/login
+
+By pressing the button shown in the iframe after successful login.
+
+The first time succeeds (session deletion)  
+The second one is a failure (session error), and ajax redirection is also possible.

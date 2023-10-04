@@ -36,6 +36,9 @@ func GetDirectory() string {
 func NewApp1Server() *gin.Engine {
 	sessionMap = map[string]loginUser{}
 	engine := gin.New()
+	engine.Use(func(ctx *gin.Context) {
+		slog.Info("Request.", "Path", ctx.Request.URL.Path)
+	})
 	dir := GetDirectory()
 	engine.LoadHTMLGlob(filepath.Join(dir, "statics/app1/html/*"))
 	engine.GET("/login", app1LoginPageHandler)
@@ -47,7 +50,6 @@ func NewApp1Server() *gin.Engine {
 
 func app1AuthHandler(c *gin.Context) {
 	slog.Info("request.")
-	c.Header("X-Location", "/login")
 	v, err := c.Cookie(sessionKeyName)
 	if err != nil {
 		slog.ErrorContext(c.Request.Context(), err.Error())
